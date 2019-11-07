@@ -1,0 +1,12 @@
+---
+  
+# - name: Template nginx.repo
+#   template: src=nginx.repo dest=/etc/yum.repos.d/nginx.repo mode=0644
+
+- name: install Nginx
+  yum: pkg={{ item }} state=installed
+  with_items:
+    - nginx
+
+- name: ensure nginx is running automatically at boot time
+  service: name=nginx state=restarted enabled=yes

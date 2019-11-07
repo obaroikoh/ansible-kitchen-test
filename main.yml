@@ -1,0 +1,5 @@
+- name: Test Role
+  hosts: test-kitchen
+  user: vagrant
+  roles:
+    - nginx
