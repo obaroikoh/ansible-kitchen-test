@@ -23,6 +23,7 @@ jobs:
       # Install Ruby gems
       - name: Install Ruby gems
         run: |
+          gem install rdoc
           gem install kitchen-ansible
           gem install kitchen-vargrant
           gem install kitchen-inspec
