@@ -15,13 +15,13 @@ jobs:
       # This step uses GitHub's hello-world-javascript-action: https://github.com/actions/hello-world-javascript-action
       - name: Hello world
         uses: actions/hello-world-javascript-action@v1
+        uses: actions/setup-ruby@v1
         with:
           who-to-greet: 'Mona the Octocat'
         id: hello
 
       # Install Ruby gems
       - name: Install Ruby gems
-        uses: actions/setup-ruby@v1
         run: |
           gem install kitchen-ansible
           gem install kitchen-vargrant
