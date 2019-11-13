@@ -21,6 +21,7 @@ jobs:
 
       # Install Ruby gems
       - name: Install Ruby gems
+        uses: actions/setup-ruby@v1
         run: |
           gem install kitchen-ansible
           gem install kitchen-vargrant
