@@ -12,17 +12,18 @@ jobs:
     # This job runs on Linux
     runs-on: ubuntu-16.04
     steps:
+      # This step uses GitHub's hello-world-javascript-action: https://github.com/actions/hello-world-javascript-action
       - uses: actions/setup-ruby@v1
-        # Install Ruby gems
-      - name: Set repo to use
+      - name: get repo
         uses: obaroikoh/ansible-kitchen-test
-        
-      - name: Install Ruby Gems
+
+      # Install Ruby gems
+      - name: Install Ruby gems
         run: |
           gem install rdoc
           gem install kitchen-ansible
           gem install kitchen-vagrant
           gem install kitchen-inspec
-
-      - name: Kitchen Create
-        run: kitchen create
+      # This step prints an output (time) from the previous step's action.
+      - name: Echo the greeting's time
+        run: echo 'The time was ${{ steps.hello.outputs.time }}.'
