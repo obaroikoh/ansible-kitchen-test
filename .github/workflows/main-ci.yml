@@ -14,8 +14,10 @@ jobs:
     steps:
       - uses: actions/setup-ruby@v1
         # Install Ruby gems
-      - name: Install Ruby Gems
+      - name: Set repo to use
         uses: obaroikoh/ansible-kitchen-test
+        
+      - name: Install Ruby Gems
         run: |
           gem install rdoc
           gem install kitchen-ansible
